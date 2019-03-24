@@ -1,51 +1,47 @@
 import com.development.lists.MyArrayList;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class TestMyArrayList {
+    private MyArrayList myArrayList;
+
+    @Before
+    public void setUp() {
+        myArrayList = new MyArrayList();
+        myArrayList.add(1);
+        myArrayList.add(2);
+    }
 
     @Test
     public void testSizeMethod() {
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add(1);
-        myArrayList.add(2);
-        myArrayList.add("Three");
-        assert (myArrayList.size() == 3);
+        myArrayList.add(3);
+        assertEquals(3, myArrayList.size());
     }
 
     @Test
     public void testGetMethod() {
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add(1);
-        myArrayList.add(2);
-        myArrayList.add("Three");
+        myArrayList.add(3);
         assertEquals(2, myArrayList.get(1));
     }
 
     @Test
     public void testRemoveMethod() {
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add(1);
-        myArrayList.add(2);
-        myArrayList.add("Three");
+        myArrayList.add(3);
         myArrayList.remove(1);
-        assertEquals("Three", myArrayList.get(1));
+        assertEquals(3, myArrayList.get(1));
     }
 
     @Test
     public void testAddMethod() {
-        MyArrayList myArrayList = new MyArrayList();
         myArrayList.add(1);
         assertEquals(1, myArrayList.get(0));
     }
 
     @Test
     public void testClearMethod() {
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add(1);
-        myArrayList.add(2);
-        myArrayList.add("Three");
+        myArrayList.add(3);
         myArrayList.clear();
         assertEquals(0, myArrayList.size());
     }
