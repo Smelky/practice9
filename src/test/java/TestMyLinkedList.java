@@ -1,3 +1,4 @@
+import com.development.lists.List;
 import com.development.lists.MyLinkedList;
 import org.junit.Before;
 import org.junit.Test;
@@ -5,43 +6,43 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TestMyLinkedList {
-    private MyLinkedList myLinkedList;
+    private List<String> myLinkedList;
 
     @Before
     public void setUp() {
         myLinkedList = new MyLinkedList();
-        myLinkedList.add(1);
-        myLinkedList.add(2);
+        myLinkedList.add("One");
+        myLinkedList.add("Two");
     }
 
     @Test
     public void testSizeMethod() {
-        myLinkedList.add(3);
+        myLinkedList.add("Three");
         assertEquals(3, myLinkedList.size());
     }
 
     @Test
     public void testGetMethod() {
-        myLinkedList.add(3);
-        assertEquals(3, myLinkedList.get(2));
+        myLinkedList.add("Three");
+        assertEquals("Three", myLinkedList.get(2));
     }
 
     @Test
     public void testRemoveMethod() {
-        myLinkedList.add(3);
+        myLinkedList.add("Three");
         myLinkedList.remove(1);
-        assertEquals(3, myLinkedList.get(1));
+        assertEquals("Three", myLinkedList.get(1));
     }
 
     @Test
     public void testAddMethod() {
-        myLinkedList.add(3);
-        assertEquals(3, myLinkedList.get(2));
+        myLinkedList.add("Three");
+        assertEquals("Three", myLinkedList.get(2));
     }
 
     @Test
     public void testClearMethod() {
-        myLinkedList.add(3);
+        myLinkedList.add("Three");
         myLinkedList.clear();
         assertEquals(0, myLinkedList.size());
     }
